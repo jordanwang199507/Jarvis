@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: "Volrant", monospace; */
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .main-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: 1;
+}
+
+.main .jarvis-container {
+  padding: 10px;
+  z-index: 10;
+}
+
+.jarvis-loader {
+  margin: 50px;
+}
+
+.jarvis-loader__inner {
+  position: absolute;
+  display: block;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  box-shadow: 0 -25px 0 0 rgba(97, 247, 215, 0.3),
+    -27.5px 5px 0 0 rgba(135, 212, 209, 0.6),
+    27.5px 5px 0 0 rgba(37, 225, 90, 0.3);
+  animation: rotate var(--speed) linear infinite;
+}
+.jarvis-loader__inner:nth-child(2) {
+  box-shadow: 27.5px -15px 0 0.2 rgba(0, 228, 213, 0.3),
+    -27.5px -15px 0 0.1 rgba(97, 247, 200, 0.3),
+    0 25px 0 0.2 rgba(0, 228, 30, 0.3);
+  animation: rotate__other var(--speed) linear infinite;
+}
+
+.main .jarvis-container .jarvis-image__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .jarvis-container .jarvis-image__container img {
+  width: 290px;
+  align-items: center;
+  z-index: 12;
+}
+
+.main .jarvis-container .jarvis-header {
+  color: #00ff2b;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-family: "Basica";
+}
+
+.main .jarvis-container p {
+  color: #038c36;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Volrant";
+}
+
+.input {
+  width: 370px;
+  margin: auto;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input button {
+  box-shadow: inset 0 0 10px #038c36;
+  height: 30px;
+  padding: 25px 30px;
+  width: 350px;
+  box-sizing: border-box;
+  /* border: none; */
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  /* background-color: rgba(66, 214, 202, 0.3); */
+  /* background: #36C2DC; */
+  border: 1px solid #038c36;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 157, 56, 0.08) 0%,
+    rgba(6, 167, 61, 0.01) 100%
+  );
+  color: #36ba01;
+}
+
+button i {
+  width: 10%;
+}
+
+button .content {
+  width: 90%;
+  font-family: "Volrant";
+  font-size: 14px;
+}
+
+button:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(131, 180, 51, 0.09) 0%,
+    rgba(39, 164, 39, 0.2) 100%
+  );
+}
+
+button:hover:before {
+  content: " ";
+  border-radius: 20px;
+  border: 2px #038c36 solid;
+  position: absolute;
+  left: 25px;
+  top: 8px;
+  box-sizing: border-box;
+  width: 350px;
+  height: 40px;
+  padding: 25px 30px;
+  transition: all 0.7s ease;
+  animation: grow 1s infinite;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.5, 1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  50% {
+    transform: scale(1.1) rotate(360deg);
+  }
+  100% {
+    transform: scale(1) rotate(720deg);
+  }
+}
+
+@keyframes rotate__other {
+  50% {
+    transform: scale(1.2) rotate(-360deg);
+  }
+  100% {
+    transform: scale(1) rotate(-720deg);
+  }
+}
